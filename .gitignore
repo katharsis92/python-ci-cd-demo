@@ -1,0 +1,28 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+env/
+
+# Test and coverage
+.pytest_cache/
+coverage.xml
+htmlcov/
+
+# Editor configs
+.vscode/
+.idea/
+
+# OS junk
+.DS_Store
+
+# Logs
+*.log
+
+# Temporary/backup/swap files
+*.swp
+*.bak
+*.tmp
