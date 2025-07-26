@@ -80,7 +80,7 @@ Using GitHub Actions for CI/CD ensures that:
 **Diksha Rawat**  
 Senior Lead Engineer @ Qualcomm  
 🌱 DevOps & CI/CD Enthusiast  
-🔗 [GitHub](https://github.com/diksha-rawat)
+🔗 [Linkedin](www.linkedin.com/in/diksharawat)
 
 ---
 
