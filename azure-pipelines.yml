@@ -1,23 +1,28 @@
 trigger:
-- main
+- main   # Branch anpassen
 
 pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+# Python installieren
 - task: UsePythonVersion@0
   inputs:
     versionSpec: '3.x'
 
+# Pip updaten
 - script: python -m pip install --upgrade pip
   displayName: 'Upgrade pip'
 
+# Dependencies installieren
 - script: pip install -r requirements.txt
   displayName: 'Install dependencies'
 
+# Tests ausführen
 - script: pytest --junitxml=test-results.xml
-  displayName: 'Run pytest and export JUnit XML'
+  displayName: 'Run pytest'
 
+# Testergebnisse veröffentlichen
 - task: PublishTestResults@2
   inputs:
     testResultsFiles: '**/test-results.xml'
