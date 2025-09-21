@@ -1,0 +1,24 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.x'
+
+- script: python -m pip install --upgrade pip
+  displayName: 'Upgrade pip'
+
+- script: pip install -r requirements.txt
+  displayName: 'Install dependencies'
+
+- script: pytest --junitxml=test-results.xml
+  displayName: 'Run pytest and export JUnit XML'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFiles: '**/test-results.xml'
+    testRunTitle: 'Python Unit Tests'
